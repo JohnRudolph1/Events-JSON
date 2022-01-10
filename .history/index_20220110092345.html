@@ -1,0 +1,34 @@
+<html>
+   <head>
+      <title>Launch Status</title>
+      <script>
+         window.addEventListener("load", function() {
+            fetch("json.js").then( function(response) {
+               response.json().then( function(json) {
+                  const div = document.getElementById("events");
+                  // Add HTML that includes the JSON data
+                  div.innerHTML = `
+                     <ul>
+                        <li>Title: ${json.title}</li>
+                        <li>Category: ${json.category}</li>
+                        <li>Description ${json.description}</li>
+                        <li>Date ${json.start}</li>
+                        <li>Venue ${json.venue_name}</li>
+                        <li>Address ${json.venue_formatted_address}</li>
+                        <li>State ${json.state}</li>
+                        
+                     </ul>
+                  `;
+               });
+            });
+         });
+      </script>
+   </head>
+   <body>
+      <h1>Launch Status</h1>
+      <h3>Weather Conditions</h3>
+      <div id="events">
+         <!-- Weather data is added here dynamically. -->
+      </div>
+   </body>
+</html>

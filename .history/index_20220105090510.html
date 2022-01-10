@@ -1,0 +1,19 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>fetch API</title>
+</head>
+<body>
+    <p>index page</p>
+    <div id="content">
+
+    </div>
+
+<script>
+    fetch('./page.html')
+        .then(data => data.text())
+        .then(html => document.getElementById('content').innerHTML = html);
+</script>
+</body>
+</html>
